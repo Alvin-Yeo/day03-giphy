@@ -1,0 +1,44 @@
+.container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+#result-container {
+    margin: 3rem auto;
+}
+
+#gif-container {
+    display: grid;
+    margin: 2rem auto;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    gap: 20px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        max-width: 850px;
+    }
+
+    #gif-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 550px;
+    }
+
+    #gif-container {
+        grid-template-columns: 1fr;
+    }
+}

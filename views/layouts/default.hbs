@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Giphy</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div id="form-div">
+                <form action="/search" method="GET">
+                    <input type="text" name="to-search" size="40" placeholder="Enter keyword..." required>
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+
+            <div id="result-container">
+                {{{ body }}}
+            </div>
+        </div>
+    </main>
+</body>
+</html>
