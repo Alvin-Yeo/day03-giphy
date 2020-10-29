@@ -49,15 +49,37 @@ app.get('/search', async (req, res) => {
     }
 
     const dataArr = gifs.data;
-    const gifsUrlArr = dataArr.map(data => data.images.original.url);
+    const gifsUrlArr = dataArr.map(data => data.images.fixed_height.url);
+
+    /*
+    const img = gifs.data
+        .filter(
+            d => {
+                return !d.title.includes('f**k');
+            }
+        )
+        .map(
+            d => {
+                return {
+                    title: d.title,
+                    url: d.images.fixed_height.url
+                };
+            }
+        );
+    */
     
     // console.log('gifsArr: ', gifsArr);
+    // console.info('!gifsUrlArr.length: ', !gifsUrlArr.length);
+    // console.info('!!gifsUrlArr.length: ', !!gifsUrlArr.length);
 
     res.status(200);
     res.type('text/html');
     res.render('result', {
         search,
-        gifsUrlArr
+        gifsUrlArr,
+        // hasContent: gifsUrlArr.length > 0, 
+        // hasContent: !!gifsUrlArr.length,
+        hasContent: gifsUrlArr.length
     });
 });
 
